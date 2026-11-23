@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aplicación del Tiempo</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="contenedor">
+
+        <header class="encabezado">
+            <h1>Aplicación del Tiempo</h1>
+            <p>Consulta el clima de cualquier lugar del mundo</p>
+        </header>
+
+        <!-- Buscador de ubicación -->
+
+        <form id="formulario-busqueda" class="buscador">
+
+            <input type="text" id="ubicacion" placeholder="Escribe una ciudad..." aria-label="Ciudad o ubicación"
+                required>
+
+            <button type="submit" id="boton-buscar">
+                Buscar
+            </button>
+
+        </form>
+
+        <div class="acciones">
+
+            <button id="boton-ubicacion">
+                Mi ubicación
+            </button>
+
+            <button id="boton-actualizar" disabled>
+                Actualizar clima
+            </button>
+
+        </div>
+
+        <!-- Estado de carga -->
+
+        <div id="cargando" class="cargando" hidden>
+            <div class="animacion-carga"></div>
+            <p>Consultando información meteorológica...</p>
+        </div>
+
+        <!-- Mensajes de error -->
+
+        <p id="mensaje-error" class="mensaje-error" role="alert" hidden></p>
+
+        <!-- Información meteorológica -->
+
+        <section id="informacion-clima" hidden>
+
+            <!-- Clima actual -->
+
+            <article class="tarjeta-clima">
+
+                <h2 id="nombre-ciudad">Ciudad</h2>
+
+                <p id="fecha-actual"></p>
+
+                <div class="temperatura-principal">
+
+                    <span id="icono-clima"></span>
+
+                    <h2 id="temperatura">-- °C</h2>
+
+                </div>
+
+                <p id="estado-clima">Estado del clima</p>
+
+                <div class="detalles-clima">
+
+                    <div class="detalle">
+                        <h3>Viento</h3>
+                        <p id="viento">-- km/h</p>
+                    </div>
+
+                    <div class="detalle">
+                        <h3>Probabilidad de lluvia</h3>
+                        <p id="lluvia">-- %</p>
+                    </div>
+
+                    <div class="detalle">
+                        <h3>Humedad</h3>
+                        <p id="humedad">-- %</p>
+                    </div>
+
+                    <div class="detalle">
+                        <h3>Sensación térmica</h3>
+                        <p id="sensacion">-- °C</p>
+                    </div>
+
+                </div>
+
+            </article>
+
+            <!-- Pronóstico futuro -->
+
+            <section class="seccion-pronostico">
+
+                <h2>Próximas 24 horas</h2>
+
+                <div id="pronostico-futuro" class="contenedor-horas">
+                </div>
+
+            </section>
+
+            <!-- Historial meteorológico -->
+
+            <section class="seccion-pronostico">
+
+                <h2>Últimas 24 horas</h2>
+
+                <div id="pronostico-anterior" class="contenedor-horas">
+                </div>
+
+            </section>
+
+        </section>
+
+        <footer class="pie-pagina">
+            <p>Datos meteorológicos proporcionados por Open-Meteo</p>
+        </footer>
+
+    </main>
+
+    <script src="javascript.js"></script>
+
+</body>
+
+</html>
